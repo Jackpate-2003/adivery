@@ -263,7 +263,7 @@ class AdiveryModule(private val reactContext: ReactApplicationContext) :
     return bitmap
   }
 
-  fun encodeToBase64(image: Bitmap, compressFormat: CompressFormat?, quality: Int): String? {
+  fun encodeToBase64(image: Bitmap, compressFormat: CompressFormat, quality: Int): String? {
     val byteArrayOS = ByteArrayOutputStream()
     image.compress(compressFormat, quality, byteArrayOS)
     return Base64.encodeToString(byteArrayOS.toByteArray(), Base64.NO_WRAP)
